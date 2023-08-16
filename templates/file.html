@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="content-section">
+  <div class="section-header-wrapper">
+    <h1 class="section-header">Files</h1>
+    <a href="fdlt" class="btn btn-primary">All File Delete</a>
+  </div>
+  <div class="files-table">
+    <div class="files-table-header">
+      
+      <div class="column-header table-cell">Name</div>
+      <div class="column-header table-cell size-cell">Size</div>
+      <div class="column-header table-cell">Last Modified</div>
+      <div class="column-header table-cell">Action</div>
+    </div>
+    {% for i in name %}
+    <div class="files-table-row">
+      
+      <div class="table-cell name-cell jpg"><a href="media/{{i.files}}">{{i.filename}}</a></div>
+      <div class="table-cell size-cell">{{i.filesize}}</div>
+      <div class="table-cell">{{i.filedate}}</div>
+      <div class="table-cell action-cell">
+        <a href="media/{{i.name}}" style="color: blue;">View</a>
+        <a href="media/{{i.name}}" style="color: green;" download>Download</a>
+        <a href="filedlt/{{i.id}}" style="color: red;">Delete</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock content %}

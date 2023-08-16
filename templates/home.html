@@ -1,0 +1,57 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>vish</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="https://vish.iam007.workers.dev/1:/Files/Static/mn/style.css">
+<link rel="stylesheet" href="https://vish.iam007.workers.dev/1:/Files/Static/css/style.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" />
+
+</head>
+<body style="background: url('{% static 'img/bg.jpg' %}');background-position: center;background-repeat: no-repeat;">
+<!-- partial:index.partial.html -->
+<link href="https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap" rel="stylesheet">
+<div class="container" >
+  <div class="">
+    <div class="row justify-content-center mt-5" >
+      <div class="col-lg-4 col-md-6 col-sm-6"style="border-radius: 10px;
+    background: linear-gradient(180deg, #e0e9fd 0%, #e9ecf1 90%);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.4);">
+        <div class=" ">
+          <div class="card-title text-center border-bottom">
+            <h2 class="p-3">Login</h2>
+          </div>
+          <div class="card-body">
+            <form method="post">
+              {% csrf_token %}
+              <div class="mb-4">
+                <label for="username" class="form-label">Username/Email</label>
+                {% render_field form.username class="form-control" placeholder="Username" %}
+              </div>
+              <div class="mb-4">
+                <label for="password" class="form-label">Password</label>
+                {% render_field form.password class="form-control" placeholder="Password" %}
+              </div>
+              <div class="mb-4">
+                <input type="checkbox" class="form-check-input" id="remember" />
+                <label for="remember" class="form-label">Remember Me</label>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn text-light main-bg">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script><script  src="{% static 'mn/script.js' %}"></script>
+
+</body>
+</html>
