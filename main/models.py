@@ -22,7 +22,7 @@ class files(models.Model):
         return x
 
     def filesize(self):
-        filename = f'.\media\{self.name}'
+        filename = f'./media/{self.name}'
         filename=str(filename)
         stats = os.stat(filename)
         vlu=int(stats.st_size)
